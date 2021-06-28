@@ -1,3 +1,9 @@
+<?php
+session_start();
+if( !isset($_SESSION["status_user"])) {
+header("Location: halamanlogin.html");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title>Document</title>
+  <title>Konsul Gizi</title>
   <style>
  
     /* Styling the Body element i.e. Color,
@@ -168,7 +174,13 @@
                         <br>
                         <div class="mb-3">
                             <label for="umur" class="form-label">Usia</label>
-                            <input type="email" class="form-control" id="umur" v-model="umur">
+                            <p><?php echo AutoAge("11-4-2000"); ?></p>
+                            <?php function AutoAge($birthday){
+                                $today = new DateTime(date('Y-m-d'));
+                                $bday = new DateTime($birthday); // Persons Date of Birth     
+                                $diff = $bday->diff($today);
+                                return $diff->format('%y');}
+                            ?>
                         </div>
                         <div v-if="kelamin == 'perempuan'">
                             <div class="mb-3">Jika perempuan, sudah punya anak atau belum ?</div>
