@@ -10,6 +10,6 @@ $_SESSION = array();
 
  
 // Redirect to login page
-header("location: ../halamanindex.php");
+header("location: ../halamanindex.html");
 exit;
 ?>

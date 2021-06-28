@@ -12,7 +12,7 @@ $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
 $query = mysqli_query($link, "insert into user(nama, tanggallahir, jeniskelamin, username, password, status) values ('$nama', '$tanggallahir', '$jeniskelamin', '$username', '$password', 'member')");
 if($query) {
-	header('location: ../halamanlogin.php');
+	header('location: ../halamanlogin.html');
 } else {
 	echo mysqli_error($link);
 

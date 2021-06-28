@@ -13,16 +13,16 @@ if($cek > 0){
 		
 		$_SESSION['username'] = $username;
 		$_SESSION['status_user'] = "login";
-		header("location:../halamanindexlogin.php");
+		header("location:../halamanindexlogin.html");
 	}
 	if($cekIsi['status'] == "admin"){
 		$_SESSION['username'] = $username;
 		$_SESSION['status_user'] = "login";
-		header("location:../halamanindexlogin.php");
+		header("location:../halamanindexlogin.html");
 	}
 }
 else{
-	header("location:../halamanindexlogin.php");
+	header("location:../halamanindexlogin.html");
 }
 
 ?>
